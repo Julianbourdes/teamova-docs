@@ -3,6 +3,18 @@ title: Changelog
 description: 'Latest updates and improvements to Teamova'
 ---
 
+<Update label="0.2.2" tags={["Patch"]}>
+
+## Improved Stability After Server Sleep
+
+The Planning Poker service now gracefully handles server wake-ups instead of crashing. If you experienced loading errors after the service was idle, those should no longer occur.
+
+- **Automatic reconnection** - Redis connections now automatically recover after server sleep/wake cycles
+- **Better retry logic** - The dashboard gives the backend more time to wake up before showing an error
+
+</Update>
+
+
 <Update label="0.2.0" tags={["Minor", "Improvements"]}>
 
 ## Version Tracking
