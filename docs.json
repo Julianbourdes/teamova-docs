@@ -37,7 +37,24 @@
             "groups": [
               {
                 "group": "Getting Started",
-                "pages": ["en/introduction", "en/features"]
+                "pages": ["en/introduction"]
+              },
+              {
+                "group": "Core",
+                "pages": [
+                  "en/core/authentication",
+                  "en/core/organizations",
+                  "en/core/account"
+                ]
+              },
+              {
+                "group": "Planning Poker",
+                "pages": [
+                  "en/planning-poker/sessions",
+                  "en/planning-poker/voting-and-decks",
+                  "en/planning-poker/integrations",
+                  "en/planning-poker/analytics"
+                ]
               },
               {
                 "group": "What's New",
@@ -74,7 +91,24 @@
             "groups": [
               {
                 "group": "Commencer",
-                "pages": ["fr/introduction", "fr/features"]
+                "pages": ["fr/introduction"]
+              },
+              {
+                "group": "Fondamentaux",
+                "pages": [
+                  "fr/core/authentication",
+                  "fr/core/organizations",
+                  "fr/core/account"
+                ]
+              },
+              {
+                "group": "Planning Poker",
+                "pages": [
+                  "fr/planning-poker/sessions",
+                  "fr/planning-poker/voting-and-decks",
+                  "fr/planning-poker/integrations",
+                  "fr/planning-poker/analytics"
+                ]
               },
               {
                 "group": "Quoi de Neuf",

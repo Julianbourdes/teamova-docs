@@ -1,0 +1,104 @@
+---
+title: "Integrations"
+description: "Connect Jira, GitLab, and Linear to import issues and sync estimates"
+---
+
+## Overview
+
+Teamova connects with your issue tracker to import stories and sync estimates back automatically. Instead of manually copying stories into your session, pull them directly from the tools you already use. When estimation is complete, results flow back to your project management tool.
+
+<CardGroup cols={3}>
+  <Card title="Jira" icon="jira">
+    Cloud and Server. Import stories and sync story points.
+  </Card>
+  <Card title="GitLab" icon="gitlab">
+    Import issues and sync weight estimates.
+  </Card>
+  <Card title="Linear" icon="circle-dot">
+    Import issues and sync estimation points.
+  </Card>
+</CardGroup>
+
+## Jira
+
+Connect your Jira instance to import stories directly into your Planning Poker sessions.
+
+<Steps>
+  <Step title="Connect your Jira instance">
+    Link your Jira Cloud or Jira Server instance from the integration settings. Authorize Teamova to access your projects.
+  </Step>
+  <Step title="Import stories">
+    Browse your Jira projects and select the stories you want to estimate. You can filter by issue type, status, or assignee to narrow down the list.
+  </Step>
+  <Step title="Estimate in Teamova">
+    Run your Planning Poker session as usual. Stories imported from Jira display their key, summary, and description.
+  </Step>
+  <Step title="Sync estimates back">
+    When you set a final estimate, the story points are automatically synced back to Jira. You can configure which Jira field receives the estimates.
+  </Step>
+</Steps>
+
+<Tip>
+  If your Jira instance uses a custom field for story points, you can specify the field ID in the connector settings.
+</Tip>
+
+## GitLab
+
+Connect GitLab using a Personal Access Token to import issues and sync estimates.
+
+<Steps>
+  <Step title="Generate a Personal Access Token">
+    In your GitLab account, create a Personal Access Token (PAT) with the appropriate scopes for reading and writing issues.
+  </Step>
+  <Step title="Connect to Teamova">
+    Enter your GitLab URL and PAT in the integration settings. Teamova verifies the connection and lists your available projects.
+  </Step>
+  <Step title="Import issues">
+    Select the GitLab project and import the issues you want to estimate.
+  </Step>
+  <Step title="Sync weight back">
+    Final estimates are synced back to GitLab as the weight field on each issue.
+  </Step>
+</Steps>
+
+## Linear
+
+Connect Linear using an API key to import issues and sync estimation data.
+
+<Steps>
+  <Step title="Create an API key">
+    In your Linear settings, generate an API key for Teamova to use.
+  </Step>
+  <Step title="Connect to Teamova">
+    Enter your Linear API key in the integration settings. Teamova connects to your workspace and lists available teams.
+  </Step>
+  <Step title="Import issues">
+    Select a Linear team and import the issues you want to estimate in your session.
+  </Step>
+  <Step title="Sync estimates back">
+    Final estimation values are automatically synced back to Linear.
+  </Step>
+</Steps>
+
+## Refresh Story Data
+
+After importing stories, you can refresh them at any time to pull the latest data from your issue tracker. This updates the story title, description, and any other fields without requiring a new import.
+
+<Note>
+  Refreshing a story only updates its metadata from the issue tracker. It does not change any estimates already set in Teamova.
+</Note>
+
+## Coming Soon
+
+<CardGroup cols={2}>
+  <Card title="GitHub" icon="github">
+    Import issues from GitHub repositories and sync estimates back.
+  </Card>
+  <Card title="Trello" icon="trello">
+    Connect Trello boards and import cards for estimation.
+  </Card>
+</CardGroup>
+
+## Configuration
+
+Set up and manage your integrations from **Settings > Integrations** within your session or organization settings. Each integration can be configured independently, and you can connect multiple instances of the same tool if needed.

@@ -1,0 +1,103 @@
+---
+title: "Voting & Decks"
+description: "Vote in real-time and choose the estimation scale that fits your team"
+---
+
+## Real-Time Voting
+
+Everyone votes at the same time during a round. Once all participants have submitted their estimates, results are revealed instantly. No page refreshing, no waiting -- everything updates in real-time.
+
+<Tip>
+  Real-time updates mean you can see who has voted and who is still deciding, keeping the session moving smoothly.
+</Tip>
+
+## Estimation Decks
+
+Choose the scale that best fits your team's workflow. Teamova includes three built-in decks and supports custom decks for teams that need something different.
+
+<Tabs>
+  <Tab title="Fibonacci">
+    The classic agile estimation scale: **1, 2, 3, 5, 8, 13, 21, 34...**
+
+    Best for teams that want natural spacing between values to reflect increasing uncertainty in larger stories.
+  </Tab>
+  <Tab title="T-Shirt Sizes">
+    A simple, intuitive scale: **XS, S, M, L, XL**
+
+    Great for high-level estimation or teams that prefer relative sizing without numbers.
+  </Tab>
+  <Tab title="Powers of 2">
+    A technical estimation scale: **1, 2, 4, 8, 16, 32...**
+
+    Popular with engineering teams who think in terms of doubling effort.
+  </Tab>
+  <Tab title="Custom Decks">
+    Design your own scale with any values that make sense for your team. Save custom decks for reuse across sessions.
+
+  </Tab>
+</Tabs>
+
+## Create a Custom Deck
+
+Build estimation decks tailored to your team's unique workflow.
+
+<Steps>
+  <Step title="Open deck settings">
+    Navigate to your session creation screen or deck management area.
+  </Step>
+  <Step title="Define your values">
+    Add the values you want in your deck. You can use numbers, text, or a mix of both.
+  </Step>
+  <Step title="Name and save">
+    Give your deck a descriptive name and save it. The deck becomes available for all future sessions.
+  </Step>
+  <Step title="Reuse across sessions">
+    Select your custom deck when creating any new session. Share it with your team for consistency.
+  </Step>
+</Steps>
+
+## Vote Reveal
+
+When the host reveals votes (or when auto-reveal triggers), all cards are flipped simultaneously. You can see each participant's choice along with a visual distribution of the votes.
+
+<Note>
+  In anonymous mode, votes are revealed without showing who voted for what, preserving privacy while still showing the overall distribution.
+</Note>
+
+## Voting Timer
+
+Set a time limit for each voting round to keep sessions focused and prevent discussions from dragging on.
+
+<AccordionGroup>
+  <Accordion title="How the timer works">
+    When the host starts a round with a timer, participants see a countdown. Once time runs out, votes are automatically collected and revealed.
+  </Accordion>
+  <Accordion title="When to use a timer">
+    Timers are especially useful for large teams or sessions with many stories. They help maintain a consistent pace and ensure you complete your estimation on schedule.
+  </Accordion>
+</AccordionGroup>
+
+## Story Baseline
+
+Set a reference story as a baseline so your team can compare relative effort. When estimating a new story, the baseline gives everyone a shared anchor point -- "Is this bigger or smaller than our reference?"
+
+<Tip>
+  Choose a story that your team has already completed and agrees on the size of. This makes the baseline most effective.
+</Tip>
+
+## Final Estimation
+
+After votes are revealed and discussed, the host sets the definitive estimate for the story. This final value is what gets recorded and, if you use integrations, synced back to your issue tracker.
+
+## Consensus Indicator
+
+Teamova shows you how aligned your team is on each vote. The consensus indicator highlights when the team agrees and when there is significant spread in the estimates, signaling that further discussion may be needed.
+
+<CardGroup cols={2}>
+  <Card title="High Consensus" icon="check">
+    Most participants voted the same or adjacent values. The team is aligned and ready to move on.
+  </Card>
+  <Card title="Low Consensus" icon="triangle-exclamation">
+    Votes are spread across multiple values. Consider discussing the story further before setting a final estimate.
+  </Card>
+</CardGroup>

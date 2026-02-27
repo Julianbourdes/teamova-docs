@@ -1,0 +1,103 @@
+---
+title: "Vote & Decks"
+description: "Votez en temps réel et choisissez l'échelle d'estimation adaptée à votre équipe"
+---
+
+## Vote en Temps Réel
+
+Tout le monde vote simultanément. Dès que chaque participant a soumis son estimation, les résultats apparaissent instantanément. Pas d'attente, pas de rafraîchissement : tout se passe en direct.
+
+<Info>
+  Les mises à jour sont transmises en temps réel via WebSocket. Vous voyez immédiatement qui a voté et quand les résultats sont prêts.
+</Info>
+
+## Decks d'Estimation
+
+Choisissez l'échelle d'estimation qui convient le mieux à votre équipe et à la nature de vos stories.
+
+<Tabs>
+  <Tab title="Fibonacci">
+    La séquence classique de l'estimation agile : **1, 2, 3, 5, 8, 13, 21...**
+
+    L'écart croissant entre les valeurs reflète l'incertitude grandissante sur les tâches complexes. C'est le choix le plus courant pour les équipes Scrum.
+  </Tab>
+  <Tab title="Tailles T-Shirt">
+    Un dimensionnement simple et intuitif : **XS, S, M, L, XL**
+
+    Idéal pour les estimations de haut niveau ou quand votre équipe préfère raisonner en termes de taille relative plutôt qu'en points.
+  </Tab>
+  <Tab title="Puissances de 2">
+    Une échelle technique : **1, 2, 4, 8, 16, 32...**
+
+    Chaque valeur double la précédente. Utile pour les équipes qui estiment en termes de complexité technique.
+  </Tab>
+  <Tab title="Deck Personnalisé">
+    Créez votre propre échelle d'estimation avec les valeurs de votre choix.
+
+  </Tab>
+</Tabs>
+
+## Créer un Deck Personnalisé
+
+<Steps>
+  <Step title="Accédez à la gestion des decks">
+    Depuis les paramètres de votre session ou de votre organisation, ouvrez la section **Decks d'estimation**.
+  </Step>
+  <Step title="Concevez votre échelle">
+    Ajoutez les valeurs qui correspondent à votre façon d'estimer. Vous pouvez utiliser des chiffres, des lettres ou des labels personnalisés.
+  </Step>
+  <Step title="Sauvegardez pour réutiliser">
+    Votre deck est enregistré et disponible pour toutes vos prochaines sessions. Vous pouvez le modifier ou le dupliquer à tout moment.
+  </Step>
+</Steps>
+
+## Révélation des Votes
+
+Une fois que tous les participants ont soumis leur estimation, les votes sont révélés simultanément. Cette approche garantit que chaque personne vote indépendamment, sans être influencée par les choix des autres.
+
+<Tip>
+  Activez la **révélation automatique** dans les paramètres de session pour que les votes soient affichés dès que le dernier participant a voté, sans intervention de l'hôte.
+</Tip>
+
+## Minuteur de Vote
+
+Définissez une limite de temps pour chaque tour de vote afin de maintenir le rythme de votre session.
+
+<CardGroup cols={2}>
+  <Card title="Sessions dynamiques" icon="stopwatch">
+    Le minuteur incite les participants à voter rapidement et évite les blocages sur une seule story.
+  </Card>
+  <Card title="Configurable par l'hôte" icon="sliders">
+    L'hôte choisit la durée du minuteur ou le désactive si la discussion le nécessite.
+  </Card>
+</CardGroup>
+
+## Story Baseline
+
+<Info>
+  La baseline est une story de référence que votre équipe utilise comme point de comparaison. Elle aide à calibrer les estimations en posant la question : "Cette story est-elle plus grande, plus petite ou similaire à notre référence ?"
+</Info>
+
+Définir une story baseline est particulièrement utile en début de session ou quand une nouvelle personne rejoint l'équipe. Elle fournit un repère commun pour que tout le monde estime sur la même base.
+
+## Estimation Finale
+
+Après la révélation des votes et la discussion, l'hôte définit l'estimation finale pour chaque story. C'est cette valeur qui est enregistrée et, le cas échéant, synchronisée avec votre outil de suivi de tickets.
+
+<Steps>
+  <Step title="Révélez les votes">
+    Les estimations de chaque participant sont affichées.
+  </Step>
+  <Step title="Discutez des écarts">
+    Si les votes divergent, encouragez une discussion pour comprendre les différences de perception.
+  </Step>
+  <Step title="Définissez la valeur finale">
+    L'hôte sélectionne ou saisit l'estimation définitive qui fait consensus.
+  </Step>
+</Steps>
+
+## Indicateur de Consensus
+
+<Card title="Visualisez l'alignement de votre équipe" icon="chart-simple">
+  L'indicateur de consensus vous montre à quel point les votes de votre équipe convergent. Un consensus élevé signifie que tout le monde est aligné. Un consensus faible signale qu'une discussion est nécessaire avant de fixer l'estimation finale.
+</Card>

@@ -1,0 +1,115 @@
+---
+title: "Intégrations"
+description: "Connectez Jira, GitLab et Linear pour importer des issues et synchroniser les estimations"
+---
+
+## Vue d'Ensemble
+
+Teamova se connecte à votre outil de suivi de tickets pour importer des stories et synchroniser les estimations automatiquement. Plus besoin de ressaisir les données : estimez dans Teamova, retrouvez les résultats dans votre outil.
+
+<CardGroup cols={3}>
+  <Card title="Jira" icon="jira" color="#0052CC">
+    Cloud et Server
+  </Card>
+  <Card title="GitLab" icon="gitlab" color="#FC6D26">
+    Personal Access Token
+  </Card>
+  <Card title="Linear" icon="chart-line" color="#5E6AD2">
+    Clé API
+  </Card>
+</CardGroup>
+
+## Jira
+
+Connectez votre instance Jira pour importer des stories et synchroniser les estimations directement depuis Teamova.
+
+<AccordionGroup>
+  <Accordion title="Connexion" icon="plug">
+    Connectez votre instance Jira Cloud ou Server depuis les paramètres d'intégration. Teamova utilise OAuth pour une connexion sécurisée.
+  </Accordion>
+  <Accordion title="Import de stories" icon="download">
+    Parcourez vos projets Jira et importez les stories dont vous avez besoin pour votre session. Sélectionnez un projet, puis choisissez les issues à estimer.
+  </Accordion>
+  <Accordion title="Filtres avancés" icon="filter">
+    Affinez votre sélection en filtrant par :
+    - **Type d'issue** (Story, Bug, Task...)
+    - **Statut** (To Do, In Progress, Done...)
+    - **Assigné** (membre spécifique ou non assigné)
+  </Accordion>
+  <Accordion title="Synchronisation automatique" icon="arrows-rotate">
+    Les story points estimés dans Teamova sont automatiquement synchronisés vers Jira une fois l'estimation finalisée.
+  </Accordion>
+  <Accordion title="Champ d'estimation configurable" icon="sliders">
+    Choisissez le champ Jira dans lequel Teamova écrit les estimations. Par défaut, c'est le champ Story Points, mais vous pouvez le personnaliser.
+  </Accordion>
+</AccordionGroup>
+
+## GitLab
+
+Connectez GitLab pour importer des issues et synchroniser les estimations via le champ weight.
+
+<AccordionGroup>
+  <Accordion title="Connexion" icon="plug">
+    Générez un **Personal Access Token (PAT)** dans GitLab avec les permissions de lecture/écriture sur les issues. Collez-le dans les paramètres d'intégration de Teamova.
+  </Accordion>
+  <Accordion title="Import de stories" icon="download">
+    Importez des issues depuis n'importe quel projet GitLab auquel votre token donne accès.
+  </Accordion>
+  <Accordion title="Synchronisation du weight" icon="arrows-rotate">
+    Les estimations sont synchronisées vers le champ **weight** de GitLab, utilisé nativement pour le suivi de la vélocité.
+  </Accordion>
+</AccordionGroup>
+
+## Linear
+
+Connectez Linear pour importer des issues et synchroniser les estimations avec votre espace de travail.
+
+<AccordionGroup>
+  <Accordion title="Connexion" icon="plug">
+    Utilisez une **clé API** Linear pour connecter votre espace de travail. La clé est stockée de manière sécurisée.
+  </Accordion>
+  <Accordion title="Import de stories" icon="download">
+    Importez des issues depuis n'importe quelle équipe Linear. Parcourez vos projets et cycles pour sélectionner les issues à estimer.
+  </Accordion>
+  <Accordion title="Synchronisation des estimations" icon="arrows-rotate">
+    Les estimations finales sont automatiquement synchronisées vers Linear une fois la session terminée.
+  </Accordion>
+</AccordionGroup>
+
+## Rafraîchir une Story
+
+<Tip>
+  Si une story a été mise à jour dans votre outil de suivi depuis son import, utilisez le bouton **Rafraîchir** pour récupérer les dernières données (titre, description, statut) sans avoir à réimporter la story.
+</Tip>
+
+## Bientôt Disponible
+
+<CardGroup cols={2}>
+  <Card title="GitHub Issues" icon="github" color="#333333">
+    Importez des issues depuis vos repositories GitHub et synchronisez les estimations.
+  </Card>
+  <Card title="Trello" icon="trello" color="#0079BF">
+    Connectez vos boards Trello pour estimer directement depuis vos cartes.
+  </Card>
+</CardGroup>
+
+## Configuration
+
+<Steps>
+  <Step title="Ouvrez les paramètres">
+    Depuis votre session ou votre organisation, rendez-vous dans **Paramètres > Intégrations**.
+  </Step>
+  <Step title="Choisissez votre outil">
+    Sélectionnez Jira, GitLab ou Linear et suivez les instructions de connexion.
+  </Step>
+  <Step title="Autorisez l'accès">
+    Complétez le processus d'authentification (OAuth, token ou clé API selon l'outil).
+  </Step>
+  <Step title="Commencez à importer">
+    Votre intégration est prête. Importez des stories dans vos sessions et les estimations se synchroniseront automatiquement.
+  </Step>
+</Steps>
+
+<Warning>
+  Les tokens et clés API sont stockés de manière chiffrée. Teamova ne conserve jamais vos identifiants en clair. Vous pouvez révoquer l'accès à tout moment depuis les paramètres d'intégration.
+</Warning>
