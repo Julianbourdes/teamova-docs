@@ -3,6 +3,30 @@ title: Changelog
 description: 'Dernières mises à jour et améliorations de Teamova'
 ---
 
+<Update label="0.5.0" tags={["Minor"]}>
+
+## Corrections QA & Améliorations
+
+Passage qualité complet adressant plus de 22 problèmes identifiés lors des tests manuels.
+
+- **Stabilité des résultats de vote** - Les résultats et statistiques de vote restent affichés lors du passage entre stories estimées, corrigeant un problème de scintillement lié à une condition de course WebSocket
+- **Visibilité des résultats** - Le panneau de résultats est maintenant correctement masqué pendant les tours de vote actifs jusqu'à la révélation des votes
+- **Permissions par rôle** - Les utilisateurs invités ne peuvent plus créer ni modifier de sessions ou de jeux de cartes personnalisés
+- **Modal Conditions d'Utilisation** - Ne réapparaît plus sur les pages légales après acceptation
+- **Création de story** - Les champs du formulaire sont correctement réinitialisés lors de la création d'une nouvelle story
+- **Suivi d'activité des équipes** - Toutes les opérations d'équipe (création, modification, suppression, gestion des membres) sont désormais enregistrées dans le journal d'activité de l'organisation
+- **Traductions d'activité** - Toutes les étiquettes d'actions d'activité s'affichent correctement dans les deux langues
+- **Calcul du consensus** - Formule améliorée utilisant le coefficient de variation pour des scores de consensus plus précis
+
+## Nouvelles Fonctionnalités
+
+- **Désarchiver les sessions** - Les sessions archivées peuvent désormais être restaurées
+- **Dupliquer les sessions** - Créez une copie de n'importe quelle session avec ses stories
+- **Contrôles hôte améliorés** - Panneau d'actions amélioré pour les animateurs de session
+
+</Update>
+
+
 <Update label="0.3.0" tags={["Mineur", "Nouvelles fonctionnalités", "Améliorations"]}>
 
 ## Intégrations GitLab & Linear

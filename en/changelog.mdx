@@ -3,6 +3,30 @@ title: Changelog
 description: 'Latest updates and improvements to Teamova'
 ---
 
+<Update label="0.5.0" tags={["Minor"]}>
+
+## QA Fixes & Improvements
+
+Comprehensive quality assurance pass addressing 22+ issues reported during manual testing.
+
+- **Vote results stability** - Vote results and statistics now persist when switching between estimated stories, fixing a flickering issue caused by a WebSocket race condition
+- **Vote results visibility** - Vote results panel is now properly hidden during active voting rounds until votes are revealed
+- **Role-based permissions** - Guest users can no longer create or modify sessions and custom decks
+- **Terms of Service modal** - No longer reappears on legal pages after acceptance
+- **Story creation** - Form fields are properly reset when creating a new story
+- **Team activity tracking** - All team operations (create, update, delete, member management) are now logged in the organization activity timeline
+- **Activity translations** - All activity action labels now display correctly in both languages
+- **Consensus calculation** - Improved formula using coefficient of variation for more accurate consensus scores
+
+## New Features
+
+- **Unarchive sessions** - Previously archived sessions can now be restored
+- **Duplicate sessions** - Create a copy of any session with its stories
+- **Enhanced host controls** - Improved action panel for session hosts
+
+</Update>
+
+
 <Update label="0.3.0" tags={["Minor", "New features", "Improvements"]}>
 
 ## GitLab & Linear Integrations
