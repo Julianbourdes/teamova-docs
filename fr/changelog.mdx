@@ -1,224 +1,238 @@
 ---
-title: Changelog
-description: 'Dernières mises à jour et améliorations de Teamova'
+title: "Changelog"
+description: "Dernières mises à jour et améliorations de Teamova"
 ---
 
-<Update label="0.3.0" tags={["Mineur", "Nouvelles fonctionnalités", "Améliorations"]}>
+<Update label="0.5.0" tags={["Mineur","Nouvelles fonctionnalités","Améliorations"]}>
+  ## Corrections & Améliorations
 
-## Intégrations GitLab & Linear
+  Passage qualité complet adressant plus de 22 problèmes identifiés lors des tests manuels.
 
-Vous pouvez désormais connecter GitLab et Linear en plus de Jira pour importer vos stories et synchroniser les estimations directement depuis vos outils de gestion de projet.
+  - **Stabilité des résultats de vote** - Les résultats et statistiques de vote restent affichés lors du passage entre stories estimées, corrigeant un problème de scintillement lié à une condition de course WebSocket
+  - **Visibilité des résultats** - Le panneau de résultats est maintenant correctement masqué pendant les tours de vote actifs jusqu'à la révélation des votes
+  - **Modal Conditions d'Utilisation** - Ne réapparaît plus sur les pages légales si l'on a pas encore accepté les termes et qu'on souhaite consulter ces pages
+  - **Création de story** - Les champs du formulaire sont correctement réinitialisés lors de la création d'une nouvelle story
+  - **Suivi d'activité des équipes** - Toutes les opérations d'équipe (création, modification, suppression, gestion des membres) sont désormais enregistrées dans le journal d'activité de l'organisation
+  - **Traductions d'activité** - Toutes les étiquettes d'actions d'activité s'affichent correctement dans les deux langues
+  - **Calcul du consensus** - Formule améliorée utilisant le coefficient de variation pour des scores de consensus plus précis
 
-- **Intégration GitLab** — Importez les issues de vos projets GitLab et synchronisez automatiquement les estimations de poids
-- **Intégration Linear** — Importez les issues de vos équipes Linear et synchronisez les points d'estimation
-- **Champ Story Points Jira configurable** — Si votre instance Jira utilise un champ personnalisé pour les story points, vous pouvez maintenant spécifier l'identifiant du champ dans les paramètres du connecteur
+  ## Nouvelles Fonctionnalités
 
-## Améliorations de l'interface
-
-Suite à vos retours, nous avons amélioré plusieurs éléments d'interface pour une meilleure expérience.
-
-- **Bannière cookies repositionnée** — La bannière de consentement aux cookies apparaît désormais en bas à gauche, conformément à la convention utilisée par la plupart des sites
-- **Notifications améliorées** — Les notifications apparaissent désormais en haut au centre de l'écran pour une meilleure lisibilité
-- **Correction du chevauchement des widgets** — Le bouton de chat support et les sondages ne se superposent plus lorsqu'ils sont visibles simultanément
-
+  - **Désarchiver les sessions** - Les sessions archivées peuvent désormais être restaurées
+  - **Dupliquer les sessions** - Créez une copie de n'importe quelle session avec ses stories
+  - **Contrôles hôte améliorés** - Panneau d'actions amélioré pour les animateurs de session
 </Update>
 
+<Update label="0.3.0" tags={["Mineur","Nouvelles fonctionnalités","Améliorations"]}>
+  ## Intégrations GitLab & Linear
+
+  Vous pouvez désormais connecter GitLab et Linear en plus de Jira pour importer vos stories et synchroniser les estimations directement depuis vos outils de gestion de projet.
+
+  - **Intégration GitLab** — Importez les issues de vos projets GitLab et synchronisez automatiquement les estimations de poids
+  - **Intégration Linear** — Importez les issues de vos équipes Linear et synchronisez les points d'estimation
+  - **Champ Story Points Jira configurable** — Si votre instance Jira utilise un champ personnalisé pour les story points, vous pouvez maintenant spécifier l'identifiant du champ dans les paramètres du connecteur
+
+  ## Améliorations de l'interface
+
+  Suite à vos retours, nous avons amélioré plusieurs éléments d'interface pour une meilleure expérience.
+
+  - **Bannière cookies repositionnée** — La bannière de consentement aux cookies apparaît désormais en bas à gauche, conformément à la convention utilisée par la plupart des sites
+  - **Notifications améliorées** — Les notifications apparaissent désormais en haut au centre de l'écran pour une meilleure lisibilité
+  - **Correction du chevauchement des widgets** — Le bouton de chat support et les sondages ne se superposent plus lorsqu'ils sont visibles simultanément
+</Update>
 
 <Update label="0.2.2" tags={["Patch"]}>
+  ## Stabilité améliorée
 
-## Stabilité améliorée
+  Le service Planning Poker gère désormais correctement les reprises après mise en veille au lieu de planter. Si vous rencontriez des erreurs de chargement après une période d'inactivité, elles ne devraient plus se produire.
 
-Le service Planning Poker gère désormais correctement les reprises après mise en veille au lieu de planter. Si vous rencontriez des erreurs de chargement après une période d'inactivité, elles ne devraient plus se produire.
-
-- **Meilleure tolérance aux délais** - Le tableau de bord laisse plus de temps au backend pour se réveiller avant d'afficher une erreur
-- **Améliorations des performances** - Le chargement des pages est plus rapide
-
+  - **Meilleure tolérance aux délais** - Le tableau de bord laisse plus de temps au backend pour se réveiller avant d'afficher une erreur
+  - **Améliorations des performances** - Le chargement des pages est plus rapide
 </Update>
 
+<Update label="0.2.0" tags={["Mineur","Améliorations"]}>
+  ## Suivi de Version
 
-<Update label="0.2.0" tags={["Mineur", "Améliorations"]}>
+  Teamova affiche maintenant le numéro de version dans le menu utilisateur, vous savez toujours quelle version vous utilisez.
 
-## Suivi de Version
+  ## Mises à jour Automatiques
 
-Teamova affiche maintenant le numéro de version dans le menu utilisateur, vous savez toujours quelle version vous utilisez.
-
-## Mises à jour Automatiques
-
-Vous retrouverez toujours les nouvelles versions ici — chaque mise à jour génère automatiquement une nouvelle entrée de changelog dans la documentation.
-
+  Vous retrouverez toujours les nouvelles versions ici — chaque mise à jour génère automatiquement une nouvelle entrée de changelog dans la documentation.
 </Update>
 
+<Update label="Février 2026" tags={["Nouvelles fonctionnalités","Améliorations"]}>
+  ## Connectez-vous À Votre Façon
 
-<Update label="Février 2026" tags={["Nouvelles fonctionnalités", "Améliorations"]}>
+  Vous pouvez maintenant vous connecter à Teamova avec votre compte préféré :
 
-## Connectez-vous À Votre Façon
+  - **Compte Google** - Connectez-vous avec votre espace de travail Google
+  - **Compte Microsoft** - Utilisez vos identifiants Microsoft 365
+  - **Compte GitHub** - Connectez-vous avec votre identité GitHub
 
-Vous pouvez maintenant vous connecter à Teamova avec votre compte préféré :
+  ### Connectez Plusieurs Comptes
 
-- **Compte Google** - Connectez-vous avec votre espace de travail Google
-- **Compte Microsoft** - Utilisez vos identifiants Microsoft 365
-- **Compte GitHub** - Connectez-vous avec votre identité GitHub
+  Liez tous vos comptes au même endroit. Passez facilement d'une méthode de connexion à l'autre (Google, Microsoft, GitHub) depuis vos paramètres.
 
-### Connectez Plusieurs Comptes
+  ### Définissez un Mot de Passe de Secours
 
-Liez tous vos comptes au même endroit. Passez facilement d'une méthode de connexion à l'autre (Google, Microsoft, GitHub) depuis vos paramètres.
+  Pour plus de flexibilité, vous pouvez maintenant définir un mot de passe même si vous vous êtes inscrit avec Google, Microsoft ou GitHub. Parfait quand vous avez besoin d'une méthode de connexion alternative.
 
-### Définissez un Mot de Passe de Secours
+  ## Formulaires Améliorés
 
-Pour plus de flexibilité, vous pouvez maintenant définir un mot de passe même si vous vous êtes inscrit avec Google, Microsoft ou GitHub. Parfait quand vous avez besoin d'une méthode de connexion alternative.
+  Nous avons rendu les formulaires plus clairs et plus faciles à utiliser :
 
-## Formulaires Améliorés
+  - De meilleurs indicateurs visuels montrent quels champs sont obligatoires
+  - Mise en page plus claire dans les paramètres d'organisation, la gestion d'équipe et le Planning Poker
+  - Messages d'erreur améliorés pour vous aider à compléter les formulaires plus rapidement
 
-Nous avons rendu les formulaires plus clairs et plus faciles à utiliser :
+  ## Améliorations Planning Poker
 
-- De meilleurs indicateurs visuels montrent quels champs sont obligatoires
-- Mise en page plus claire dans les paramètres d'organisation, la gestion d'équipe et le Planning Poker
-- Messages d'erreur améliorés pour vous aider à compléter les formulaires plus rapidement
+  ### Notifications Instantanées
 
-## Améliorations Planning Poker
+  Restez synchronisé avec votre équipe :
 
-### Notifications Instantanées
+  - Voyez les notifications en temps réel quand les rôles changent pendant une session
+  - Recevez un retour instantané quand des invitations sont envoyées ou révoquées
 
-Restez synchronisé avec votre équipe :
-- Voyez les notifications en temps réel quand les rôles changent pendant une session
-- Recevez un retour instantané quand des invitations sont envoyées ou révoquées
+  ### Collaboration Plus Fluide
 
-### Collaboration Plus Fluide
+  Nous avons amélioré l'expérience en temps réel pour que tout le monde reste sur la même longueur d'onde pendant les sessions d'estimation.
 
-Nous avons amélioré l'expérience en temps réel pour que tout le monde reste sur la même longueur d'onde pendant les sessions d'estimation.
+  ### Invitez Toute une Équipe en Un Clic
 
-### Invitez Toute une Équipe en Un Clic
+  Plus besoin d'inviter les participants un par un. Sélectionnez une équipe et tous ses membres rejoignent automatiquement votre session de Planning Poker.
 
-Plus besoin d'inviter les participants un par un. Sélectionnez une équipe et tous ses membres rejoignent automatiquement votre session de Planning Poker.
+  ### Import Jira Plus Fiable
 
-### Import Jira Plus Fiable
+  Correction d'un problème où les identifiants Jira apparaissaient en double dans la liste des stories. L'affichage est maintenant propre et cohérent.
 
-Correction d'un problème où les identifiants Jira apparaissaient en double dans la liste des stories. L'affichage est maintenant propre et cohérent.
+  ## Équipes
 
-## Équipes
+  Organisez vos collaborateurs en équipes au sein de votre organisation :
 
-Organisez vos collaborateurs en équipes au sein de votre organisation :
+  - **Créez des équipes** avec un nom, une description et une couleur distinctive
+  - **Ajoutez des membres** en sélectionnant parmi les membres de votre organisation
+  - **Modifiez facilement** la composition de vos équipes à tout moment
+  - **Invitez une équipe entière** directement dans une session Planning Poker
 
-- **Créez des équipes** avec un nom, une description et une couleur distinctive
-- **Ajoutez des membres** en sélectionnant parmi les membres de votre organisation
-- **Modifiez facilement** la composition de vos équipes à tout moment
-- **Invitez une équipe entière** directement dans une session Planning Poker
+  Les équipes facilitent la collaboration au quotidien et accélèrent la préparation de vos sessions d'estimation.
 
-Les équipes facilitent la collaboration au quotidien et accélèrent la préparation de vos sessions d'estimation.
+  ## Gestion de Votre Compte
 
-## Gestion de Votre Compte
+  ### Suppression de Compte
 
-### Suppression de Compte
+  Vous gardez le contrôle total sur vos données. Demandez la suppression de votre compte depuis vos paramètres :
 
-Vous gardez le contrôle total sur vos données. Demandez la suppression de votre compte depuis vos paramètres :
+  - **Période de grâce de 90 jours** : changez d'avis à tout moment et réactivez votre compte
+  - **Notification claire** : un bandeau vous indique le temps restant avant la suppression définitive
+  - **Export de données** : téléchargez toutes vos données personnelles avant la suppression
 
-- **Période de grâce de 90 jours** : changez d'avis à tout moment et réactivez votre compte
-- **Notification claire** : un bandeau vous indique le temps restant avant la suppression définitive
-- **Export de données** : téléchargez toutes vos données personnelles avant la suppression
+  ### Gestion des Membres
 
-### Gestion des Membres
+  Les administrateurs disposent de nouveaux outils pour gérer les membres de leur organisation :
 
-Les administrateurs disposent de nouveaux outils pour gérer les membres de leur organisation :
+  - **Archivage de membres** : désactivez un membre sans le supprimer définitivement
+  - **Réactivation** : réintégrez un membre archivé en un clic
+  - **Historique** : consultez la liste des membres inactifs et leurs dates de désactivation
+  - **Suppression planifiée** : les membres retirés sont supprimés après 90 jours, avec possibilité d'annulation
 
-- **Archivage de membres** : désactivez un membre sans le supprimer définitivement
-- **Réactivation** : réintégrez un membre archivé en un clic
-- **Historique** : consultez la liste des membres inactifs et leurs dates de désactivation
-- **Suppression planifiée** : les membres retirés sont supprimés après 90 jours, avec possibilité d'annulation
+  ### Suppression d'Organisation
 
-### Suppression d'Organisation
+  Les administrateurs peuvent planifier la suppression de leur organisation :
 
-Les administrateurs peuvent planifier la suppression de leur organisation :
+  - **Période de grâce de 30 jours** avant suppression définitive
+  - **Notification par email** envoyée à tous les membres de l'organisation
+  - **Annulation possible** à tout moment pendant la période de grâce
+  - **Export complet** de toutes les données de l'organisation
 
-- **Période de grâce de 30 jours** avant suppression définitive
-- **Notification par email** envoyée à tous les membres de l'organisation
-- **Annulation possible** à tout moment pendant la période de grâce
-- **Export complet** de toutes les données de l'organisation
+  ## Connexion Simplifiée
 
-## Connexion Simplifiée
+  Teamova retient désormais votre dernière méthode de connexion. Quand vous revenez sur la page de connexion, le bouton de votre fournisseur habituel (Google, Microsoft ou GitHub) est mis en avant pour vous connecter plus rapidement.
 
-Teamova retient désormais votre dernière méthode de connexion. Quand vous revenez sur la page de connexion, le bouton de votre fournisseur habituel (Google, Microsoft ou GitHub) est mis en avant pour vous connecter plus rapidement.
+  ## Fiabilité Améliorée
 
-## Fiabilité Améliorée
+  Nous avons renforcé la stabilité de la plateforme :
 
-Nous avons renforcé la stabilité de la plateforme :
+  - Temps de chargement réduits, notamment au premier accès de la journée
+  - Moins d'interruptions lors des sessions de Planning Poker
+  - Connexion plus robuste avec vos outils (Jira, fournisseurs de connexion)
 
-- Temps de chargement réduits, notamment au premier accès de la journée
-- Moins d'interruptions lors des sessions de Planning Poker
-- Connexion plus robuste avec vos outils (Jira, fournisseurs de connexion)
+  ## Offres et Fonctionnalités
 
-## Offres et Fonctionnalités
+  Teamova propose désormais trois formules adaptées à vos besoins :
 
-Teamova propose désormais trois formules adaptées à vos besoins :
+  - **FREE** : pour découvrir Teamova avec les fonctionnalités essentielles
+  - **PRO** : pour les équipes qui veulent aller plus loin (export, intégrations avancées)
+  - **MAX** : pour les organisations avec des besoins étendus
 
-- **FREE** : pour découvrir Teamova avec les fonctionnalités essentielles
-- **PRO** : pour les équipes qui veulent aller plus loin (export, intégrations avancées)
-- **MAX** : pour les organisations avec des besoins étendus
-
-Certaines fonctionnalités comme l'export CSV et l'intégration Jira sont désormais accessibles selon votre formule.
-
+  Certaines fonctionnalités comme l'export CSV et l'intégration Jira sont désormais accessibles selon votre formule.
 </Update>
 
 <Update label="Janvier 2026" tags={["Nouvelles fonctionnalités"]}>
+  ## Bienvenue sur Teamova
 
-## Bienvenue sur Teamova
+  Teamova est maintenant disponible ! Voici ce que vous pouvez faire :
 
-Teamova est maintenant disponible ! Voici ce que vous pouvez faire :
+  ### Planning Poker
 
-### Planning Poker
+  Organisez des sessions d'estimation agile avec votre équipe en temps réel :
 
-Organisez des sessions d'estimation agile avec votre équipe en temps réel :
+  **Créer des Sessions**
 
-**Créer des Sessions**
-- Démarrez une session avec un code unique que tout le monde peut rejoindre
-- Choisissez parmi Fibonacci, Tailles T-Shirt, Puissances de 2, ou créez des decks personnalisés
-- Configurez les règles de vote (vote anonyme, révélation auto, afficher les cartes)
+  - Démarrez une session avec un code unique que tout le monde peut rejoindre
+  - Choisissez parmi Fibonacci, Tailles T-Shirt, Puissances de 2, ou créez des decks personnalisés
+  - Configurez les règles de vote (vote anonyme, révélation auto, afficher les cartes)
 
-**Collaborer en Temps Réel**
-- Votez simultanément avec votre équipe
-- Voyez les résultats instantanément quand les votes sont révélés
-- Suivez le consensus avec des graphiques de distribution visuels
-- Définissez les estimations finales avec des suggestions intelligentes
+  **Collaborer en Temps Réel**
 
-**Gérer les Stories**
-- Ajoutez des stories manuellement ou importez depuis Jira
-- Incluez des descriptions, priorités et tags
-- Marquez des stories de référence
-- Exportez les résultats en CSV
+  - Votez simultanément avec votre équipe
+  - Voyez les résultats instantanément quand les votes sont révélés
+  - Suivez le consensus avec des graphiques de distribution visuels
+  - Définissez les estimations finales avec des suggestions intelligentes
 
-**Gestion d'Équipe**
-- Attribuez des rôles : Hôte, Participant ou Spectateur
-- Changez les rôles pendant la session
-- Voyez qui a voté et qui est encore en train de décider
+  **Gérer les Stories**
 
-### Intégration Jira
+  - Ajoutez des stories manuellement ou importez depuis Jira
+  - Incluez des descriptions, priorités et tags
+  - Marquez des stories de référence
+  - Exportez les résultats en CSV
 
-Connectez votre espace de travail Jira :
-- Importez des stories directement dans vos sessions Planning Poker
-- Synchronisez automatiquement les résultats d'estimation vers Jira
-- Filtrez par type d'issue, statut et assigné
+  **Gestion d'Équipe**
 
-### Decks d'Estimation Personnalisés
+  - Attribuez des rôles : Hôte, Participant ou Spectateur
+  - Changez les rôles pendant la session
+  - Voyez qui a voté et qui est encore en train de décider
 
-Créez des decks qui correspondent au workflow de votre équipe :
-- Construisez des decks personnalisés avec vos propres valeurs
-- Utilisez des templates pré-construits
-- Partagez les decks entre les sessions
-- Dupliquez et modifiez les decks existants
+  ### Intégration Jira
 
-### Fonctionnalités Supplémentaires
+  Connectez votre espace de travail Jira :
 
-**Minuteurs de Vote** - Définissez des limites de temps pour les tours de vote
+  - Importez des stories directement dans vos sessions Planning Poker
+  - Synchronisez automatiquement les résultats d'estimation vers Jira
+  - Filtrez par type d'issue, statut et assigné
 
-**Vote Anonyme** - Masquez les votes jusqu'à ce que tout le monde ait voté
+  ### Decks d'Estimation Personnalisés
 
-**Mode Spectateur** - Laissez les parties prenantes observer sans voter
+  Créez des decks qui correspondent au workflow de votre équipe :
 
-**Archive de Sessions** - Conservez l'historique des sessions d'estimation passées
+  - Construisez des decks personnalisés avec vos propres valeurs
+  - Utilisez des templates pré-construits
+  - Partagez les decks entre les sessions
+  - Dupliquez et modifiez les decks existants
 
-**Mode Sombre** - Travaillez confortablement avec le thème sombre automatique
+  ### Fonctionnalités Supplémentaires
 
-**Bilingue** - Support complet pour le français et l'anglais
+  **Minuteurs de Vote** - Définissez des limites de temps pour les tours de vote
 
+  **Vote Anonyme** - Masquez les votes jusqu'à ce que tout le monde ait voté
+
+  **Mode Spectateur** - Laissez les parties prenantes observer sans voter
+
+  **Archive de Sessions** - Conservez l'historique des sessions d'estimation passées
+
+  **Mode Sombre** - Travaillez confortablement avec le thème sombre automatique
+
+  **Bilingue** - Support complet pour le français et l'anglais
 </Update>
 
 ---
