@@ -1,248 +1,238 @@
 ---
-title: Changelog
-description: 'Latest updates and improvements to Teamova'
+title: "Changelog"
+description: "Latest updates and improvements to Teamova"
 ---
 
-<Update label="0.5.0" tags={["Minor"]}>
+<Update label="0.5.0" tags='["Minor","New features","Improvements"]'>
+  ## Fixes & Improvements
 
-## QA Fixes & Improvements
+  Comprehensive quality assurance pass addressing 22\+ issues reported during manual testing.
 
-Comprehensive quality assurance pass addressing 22+ issues reported during manual testing.
+  - **Vote results stability** - Vote results and statistics now persist when switching between estimated stories, fixing a flickering issue caused by a WebSocket race condition
+  - **Vote results visibility** - Vote results panel is now properly hidden during active voting rounds until votes are revealed
+  - **Terms of Service modal** - No longer appears on legal pages if you haven't accepted the terms yet and you want to consult these pages
+  - **Story creation** - Form fields are properly reset when creating a new story
+  - **Team activity tracking** - All team operations (create, update, delete, member management) are now logged in the organization activity timeline
+  - **Activity translations** - All activity action labels now display correctly in both languages
+  - **Consensus calculation** - Improved formula using coefficient of variation for more accurate consensus scores
 
-- **Vote results stability** - Vote results and statistics now persist when switching between estimated stories, fixing a flickering issue caused by a WebSocket race condition
-- **Vote results visibility** - Vote results panel is now properly hidden during active voting rounds until votes are revealed
-- **Role-based permissions** - Guest users can no longer create or modify sessions and custom decks
-- **Terms of Service modal** - No longer reappears on legal pages after acceptance
-- **Story creation** - Form fields are properly reset when creating a new story
-- **Team activity tracking** - All team operations (create, update, delete, member management) are now logged in the organization activity timeline
-- **Activity translations** - All activity action labels now display correctly in both languages
-- **Consensus calculation** - Improved formula using coefficient of variation for more accurate consensus scores
+  ## New Features
 
-## New Features
-
-- **Unarchive sessions** - Previously archived sessions can now be restored
-- **Duplicate sessions** - Create a copy of any session with its stories
-- **Enhanced host controls** - Improved action panel for session hosts
-
+  - **Unarchive sessions** - Previously archived sessions can now be restored
+  - **Duplicate sessions** - Create a copy of any session with its stories
+  - **Enhanced host controls** - Improved action panel for session hosts
 </Update>
 
+<Update label="0.3.0" tags={["Minor","New features","Improvements"]}>
+  ## GitLab & Linear Integrations
 
-<Update label="0.3.0" tags={["Minor", "New features", "Improvements"]}>
+  You can now connect GitLab and Linear alongside Jira to import stories and sync estimates directly from your project management tools.
 
-## GitLab & Linear Integrations
+  - **GitLab integration** — Import issues from your GitLab projects and sync weight estimates back automatically
+  - **Linear integration** — Import issues from your Linear teams and sync estimation points seamlessly
+  - **Configurable Jira story points field** — If your Jira instance uses a custom field for story points, you can now specify the field ID in the connector settings
 
-You can now connect GitLab and Linear alongside Jira to import stories and sync estimates directly from your project management tools.
+  ## Interface Improvements
 
-- **GitLab integration** — Import issues from your GitLab projects and sync weight estimates back automatically
-- **Linear integration** — Import issues from your Linear teams and sync estimation points seamlessly
-- **Configurable Jira story points field** — If your Jira instance uses a custom field for story points, you can now specify the field ID in the connector settings
+  Based on your feedback, we've improved several UI elements for a better experience.
 
-## Interface Improvements
-
-Based on your feedback, we've improved several UI elements for a better experience.
-
-- **Cookie banner repositioned** — The cookie consent notice now appears at the bottom-left, matching the convention used by most websites
-- **Improved toast notifications** — Notifications now appear at the top-center of the screen for better visibility
-- **Widget overlap fix** — The support chat button and feedback surveys no longer overlap when both are visible
-
+  - **Cookie banner repositioned** — The cookie consent notice now appears at the bottom-left, matching the convention used by most websites
+  - **Improved toast notifications** — Notifications now appear at the top-center of the screen for better visibility
+  - **Widget overlap fix** — The support chat button and feedback surveys no longer overlap when both are visible
 </Update>
-
 
 <Update label="0.2.2" tags={["Patch"]}>
+  ## Improved Stability
 
-## Improved Stability
+  The Planning Poker service now gracefully handles server wake-ups instead of crashing. If you experienced loading errors after the service was idle, those should no longer occur.
 
-The Planning Poker service now gracefully handles server wake-ups instead of crashing. If you experienced loading errors after the service was idle, those should no longer occur.
-
-- **Better retry logic** - The dashboard gives the backend more time to wake up before showing an error
-- **Performance improvements** - Page loading is faster
-
+  - **Better retry logic** - The dashboard gives the backend more time to wake up before showing an error
+  - **Performance improvements** - Page loading is faster
 </Update>
 
+<Update label="0.2.0" tags={["Minor","Improvements"]}>
+  ## Version Tracking
 
-<Update label="0.2.0" tags={["Minor", "Improvements"]}>
+  Teamova now displays the current version number in the user menu, so you always know which version you're running.
 
-## Version Tracking
+  ## Automatic Updates
 
-Teamova now displays the current version number in the user menu, so you always know which version you're running.
-
-## Automatic Updates
-
-You'll always find new releases here — each update automatically generates a new changelog entry in the documentation.
-
+  You'll always find new releases here — each update automatically generates a new changelog entry in the documentation.
 </Update>
 
+<Update label="February 2026" tags={["New features","Improvements"]}>
+  ## Sign In Your Way
 
-<Update label="February 2026" tags={["New features", "Improvements"]}>
+  You can now sign in to Teamova using your preferred account:
 
-## Sign In Your Way
+  - **Google Account** - Sign in with your Google workspace
+  - **Microsoft Account** - Use your Microsoft 365 credentials
+  - **GitHub Account** - Connect with your GitHub identity
 
-You can now sign in to Teamova using your preferred account:
+  ### Connect Multiple Accounts
 
-- **Google Account** - Sign in with your Google workspace
-- **Microsoft Account** - Use your Microsoft 365 credentials
-- **GitHub Account** - Connect with your GitHub identity
+  Link all your accounts in one place. Switch between Google, Microsoft, and GitHub sign-in methods seamlessly from your account settings.
 
-### Connect Multiple Accounts
+  ### Set a Backup Password
 
-Link all your accounts in one place. Switch between Google, Microsoft, and GitHub sign-in methods seamlessly from your account settings.
+  For added flexibility, you can now set a password even if you signed up with Google, Microsoft, or GitHub. Perfect for when you need an alternative sign-in method.
 
-### Set a Backup Password
+  ## Improved Forms
 
-For added flexibility, you can now set a password even if you signed up with Google, Microsoft, or GitHub. Perfect for when you need an alternative sign-in method.
+  We've made forms clearer and easier to use:
 
-## Improved Forms
+  - Better visual indicators show which fields are required
+  - Cleaner form layouts across organization settings, team management, and Planning Poker
+  - Improved error messages to help you complete forms faster
 
-We've made forms clearer and easier to use:
+  ## Planning Poker Enhancements
 
-- Better visual indicators show which fields are required
-- Cleaner form layouts across organization settings, team management, and Planning Poker
-- Improved error messages to help you complete forms faster
+  ### Instant Notifications
 
-## Planning Poker Enhancements
+  Stay in sync with your team:
 
-### Instant Notifications
+  - See real-time notifications when roles change during a session
+  - Get instant feedback when invitations are sent or revoked
 
-Stay in sync with your team:
-- See real-time notifications when roles change during a session
-- Get instant feedback when invitations are sent or revoked
+  ### Smoother Collaboration
 
-### Smoother Collaboration
+  We've improved the real-time experience so everyone stays on the same page during estimation sessions.
 
-We've improved the real-time experience so everyone stays on the same page during estimation sessions.
+  ### Invite a Whole Team in One Click
 
-### Invite a Whole Team in One Click
+  No more inviting participants one by one. Select a team and all its members automatically join your Planning Poker session.
 
-No more inviting participants one by one. Select a team and all its members automatically join your Planning Poker session.
+  ### More Reliable Jira Import
 
-### More Reliable Jira Import
+  Fixed an issue where Jira identifiers appeared twice in the story list. The display is now clean and consistent.
 
-Fixed an issue where Jira identifiers appeared twice in the story list. The display is now clean and consistent.
+  ## Teams
 
-## Teams
+  Organize your collaborators into teams within your organization:
 
-Organize your collaborators into teams within your organization:
+  - **Create teams** with a name, description, and distinctive color
+  - **Add members** by selecting from your organization members
+  - **Easily edit** your team composition at any time
+  - **Invite an entire team** directly into a Planning Poker session
 
-- **Create teams** with a name, description, and distinctive color
-- **Add members** by selecting from your organization members
-- **Easily edit** your team composition at any time
-- **Invite an entire team** directly into a Planning Poker session
+  Teams make daily collaboration easier and speed up the preparation of your estimation sessions.
 
-Teams make daily collaboration easier and speed up the preparation of your estimation sessions.
+  ## Account Management
 
-## Account Management
+  ### Account Deletion
 
-### Account Deletion
+  You have full control over your data. Request account deletion from your settings:
 
-You have full control over your data. Request account deletion from your settings:
+  - **90-day grace period**: change your mind at any time and reactivate your account
+  - **Clear notification**: a banner shows the remaining time before permanent deletion
+  - **Data export**: download all your personal data before deletion
 
-- **90-day grace period**: change your mind at any time and reactivate your account
-- **Clear notification**: a banner shows the remaining time before permanent deletion
-- **Data export**: download all your personal data before deletion
+  ### Member Management
 
-### Member Management
+  Administrators have new tools to manage their organization members:
 
-Administrators have new tools to manage their organization members:
+  - **Member archiving**: deactivate a member without permanently deleting them
+  - **Reactivation**: reinstate an archived member in one click
+  - **History**: view the list of inactive members and their deactivation dates
+  - **Scheduled deletion**: removed members are deleted after 90 days, with the option to cancel
 
-- **Member archiving**: deactivate a member without permanently deleting them
-- **Reactivation**: reinstate an archived member in one click
-- **History**: view the list of inactive members and their deactivation dates
-- **Scheduled deletion**: removed members are deleted after 90 days, with the option to cancel
+  ### Organization Deletion
 
-### Organization Deletion
+  Administrators can schedule the deletion of their organization:
 
-Administrators can schedule the deletion of their organization:
+  - **30-day grace period** before permanent deletion
+  - **Email notification** sent to all organization members
+  - **Cancellation possible** at any time during the grace period
+  - **Full export** of all organization data
 
-- **30-day grace period** before permanent deletion
-- **Email notification** sent to all organization members
-- **Cancellation possible** at any time during the grace period
-- **Full export** of all organization data
+  ## Simplified Sign-In
 
-## Simplified Sign-In
+  Teamova now remembers your last sign-in method. When you return to the login page, your usual provider button (Google, Microsoft, or GitHub) is highlighted so you can sign in faster.
 
-Teamova now remembers your last sign-in method. When you return to the login page, your usual provider button (Google, Microsoft, or GitHub) is highlighted so you can sign in faster.
+  ## Improved Reliability
 
-## Improved Reliability
+  We've strengthened platform stability:
 
-We've strengthened platform stability:
+  - Reduced loading times, especially on first access of the day
+  - Fewer interruptions during Planning Poker sessions
+  - More robust connection with your tools (Jira, sign-in providers)
 
-- Reduced loading times, especially on first access of the day
-- Fewer interruptions during Planning Poker sessions
-- More robust connection with your tools (Jira, sign-in providers)
+  ## Plans and Features
 
-## Plans and Features
+  Teamova now offers three plans tailored to your needs:
 
-Teamova now offers three plans tailored to your needs:
+  - **FREE**: discover Teamova with essential features
+  - **PRO**: for teams that want to go further (export, advanced integrations)
+  - **MAX**: for organizations with extended needs
 
-- **FREE**: discover Teamova with essential features
-- **PRO**: for teams that want to go further (export, advanced integrations)
-- **MAX**: for organizations with extended needs
-
-Some features like CSV export and Jira integration are now available based on your plan.
-
+  Some features like CSV export and Jira integration are now available based on your plan.
 </Update>
 
 <Update label="January 2026" tags={["New features"]}>
+  ## Welcome to Teamova
 
-## Welcome to Teamova
+  Teamova is now live! Here's what you can do:
 
-Teamova is now live! Here's what you can do:
+  ### Planning Poker
 
-### Planning Poker
+  Run agile estimation sessions with your team in real-time:
 
-Run agile estimation sessions with your team in real-time:
+  **Create Sessions**
 
-**Create Sessions**
-- Start a session with a unique code that anyone can join
-- Choose from Fibonacci, T-Shirt sizes, Powers of 2, or create custom decks
-- Configure voting rules (anonymous voting, auto-reveal, show cards)
+  - Start a session with a unique code that anyone can join
+  - Choose from Fibonacci, T-Shirt sizes, Powers of 2, or create custom decks
+  - Configure voting rules (anonymous voting, auto-reveal, show cards)
 
-**Collaborate in Real-Time**
-- Vote simultaneously with your team
-- See results instantly when votes are revealed
-- Track consensus with visual distribution charts
-- Set final estimates with smart suggestions
+  **Collaborate in Real-Time**
 
-**Manage Stories**
-- Add stories manually or import from Jira
-- Include descriptions, priorities, and tags
-- Mark baseline stories for reference
-- Export results to CSV
+  - Vote simultaneously with your team
+  - See results instantly when votes are revealed
+  - Track consensus with visual distribution charts
+  - Set final estimates with smart suggestions
 
-**Team Management**
-- Assign roles: Host, Participant, or Spectator
-- Change roles during the session
-- See who's voted and who's still deciding
+  **Manage Stories**
 
-### Jira Integration
+  - Add stories manually or import from Jira
+  - Include descriptions, priorities, and tags
+  - Mark baseline stories for reference
+  - Export results to CSV
 
-Connect your Jira workspace:
-- Import stories directly into your Planning Poker sessions
-- Sync estimation results back to Jira automatically
-- Filter by issue type, status, and assignee
+  **Team Management**
 
-### Custom Estimation Decks
+  - Assign roles: Host, Participant, or Spectator
+  - Change roles during the session
+  - See who's voted and who's still deciding
 
-Create decks that match your team's workflow:
-- Build custom decks with your own values
-- Use pre-built templates
-- Share decks across sessions
-- Duplicate and edit existing decks
+  ### Jira Integration
 
-### Additional Features
+  Connect your Jira workspace:
 
-**Voting Timers** - Set time limits for voting rounds
+  - Import stories directly into your Planning Poker sessions
+  - Sync estimation results back to Jira automatically
+  - Filter by issue type, status, and assignee
 
-**Anonymous Voting** - Hide votes until everyone has voted
+  ### Custom Estimation Decks
 
-**Spectator Mode** - Let stakeholders observe without voting
+  Create decks that match your team's workflow:
 
-**Session Archive** - Keep history of past estimation sessions
+  - Build custom decks with your own values
+  - Use pre-built templates
+  - Share decks across sessions
+  - Duplicate and edit existing decks
 
-**Dark Mode** - Work comfortably with automatic dark theme
+  ### Additional Features
 
-**Bilingual** - Full support for English and French
+  **Voting Timers** - Set time limits for voting rounds
 
+  **Anonymous Voting** - Hide votes until everyone has voted
+
+  **Spectator Mode** - Let stakeholders observe without voting
+
+  **Session Archive** - Keep history of past estimation sessions
+
+  **Dark Mode** - Work comfortably with automatic dark theme
+
+  **Bilingual** - Full support for English and French
 </Update>
 
 ---
