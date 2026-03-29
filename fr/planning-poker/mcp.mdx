@@ -1,0 +1,124 @@
+---
+title: "Serveur MCP"
+description: "Connectez Teamova à vos assistants IA comme Claude, ChatGPT, Copilot et Gemini via le Model Context Protocol"
+---
+
+## Présentation
+
+Teamova expose un **serveur MCP** (Model Context Protocol) qui vous permet d'interagir avec vos données Planning Poker depuis n'importe quel assistant IA. Posez des questions sur vos sessions, consultez les résultats et créez de nouvelles sessions — le tout en langage naturel.
+
+<CardGroup cols={2}>
+  <Card title="Multi-plateforme" icon="robot">
+    Compatible avec Claude, ChatGPT, Copilot, Gemini et tout client MCP.
+  </Card>
+  <Card title="Sécurisé par conception" icon="shield">
+    OAuth 2.1 avec PKCE — vous contrôlez quelle organisation et quelles permissions accorder.
+  </Card>
+</CardGroup>
+
+## Démarrage rapide
+
+<Steps>
+  <Step title="Trouvez votre URL de serveur MCP">
+    Allez dans **Compte > Comptes Connectés** dans Teamova. L'URL du serveur MCP est affichée dans la section MCP en bas de la page.
+
+    ```
+    https://mcp.teamova.net/mcp
+    ```
+  </Step>
+  <Step title="Ajoutez à votre assistant IA">
+    Collez l'URL dans les paramètres MCP de votre assistant IA :
+
+    - **Claude** : Paramètres > Serveurs MCP > Ajouter un serveur
+    - **ChatGPT** : Paramètres > Apps > Ajouter un serveur MCP
+    - **Copilot** : Copilot Studio > Actions > MCP
+    - **Gemini** : Paramètres > Serveurs MCP
+  </Step>
+  <Step title="Autorisez l'accès">
+    Votre assistant IA vous redirigera vers l'écran de consentement Teamova. Sélectionnez l'organisation à laquelle accorder l'accès, vérifiez les permissions et cliquez sur **Autoriser**.
+  </Step>
+  <Step title="Commencez à utiliser">
+    Demandez ce que vous voulez à votre assistant sur vos sessions Planning Poker :
+
+    - « Montre-moi les résultats de ma dernière session Planning Poker »
+    - « Quelle est l'estimation moyenne pour le Sprint 12 ? »
+    - « Crée une nouvelle session Planning Poker pour le Sprint 13 »
+  </Step>
+</Steps>
+
+## Outils disponibles
+
+Le serveur MCP expose les outils suivants aux assistants IA :
+
+| Outil | Type | Description |
+|-------|------|-------------|
+| `teamova_list_sessions` | Lecture | Listez et filtrez vos sessions Planning Poker avec pagination |
+| `teamova_get_session` | Lecture | Détails complets d'une session : participants, stories et votes |
+| `teamova_get_session_results` | Lecture | Résultats agrégés : consensus, écart-type, temps de vote |
+| `teamova_create_session` | Écriture | Créez une nouvelle session avec sélection guidée du deck et de l'équipe |
+| `teamova_add_stories` | Écriture | Ajoutez un lot de stories à une session existante |
+
+<Note>
+  Les outils d'écriture nécessitent la permission `planning-poker:write`. Les outils de lecture nécessitent uniquement `planning-poker:read`.
+</Note>
+
+## Permissions
+
+Lorsque vous connectez Teamova, vous accordez des permissions spécifiques (scopes) à l'assistant IA :
+
+| Scope | Ce qu'il autorise |
+|-------|-------------------|
+| `planning-poker:read` | Voir les sessions, résultats, votes et statistiques |
+| `planning-poker:write` | Créer des sessions et ajouter des stories |
+| `team:read` | Voir les informations d'équipe et les membres |
+
+Vous pouvez révoquer l'accès à tout moment depuis **Compte > Comptes Connectés**.
+
+## Sécurité
+
+- **OAuth 2.1 + PKCE** — Authentification standard avec clé de preuve pour l'échange de code
+- **Accès par organisation** — Chaque autorisation donne accès à une seule organisation
+- **Permissions granulaires** — Les assistants IA n'accèdent qu'à ce que vous autorisez explicitement
+- **Expiration des tokens** — Les tokens d'accès expirent après 1 heure ; les tokens de rafraîchissement après 30 jours
+- **Révocation** — Révoquez l'accès instantanément depuis les paramètres de votre compte
+
+## Exemples de prompts
+
+Voici quelques exemples de prompts à utiliser avec votre assistant IA une fois connecté :
+
+<AccordionGroup>
+  <Accordion title="Voir les résultats d'une session">
+    « Montre-moi les résultats de la session Planning Poker du Sprint 12 »
+
+    L'assistant appellera `teamova_get_session_results` et présentera les estimations consensus, l'écart-type et les temps de vote pour chaque story.
+  </Accordion>
+  <Accordion title="Créer une session">
+    « Crée une session Planning Poker Sprint 13 avec le deck Fibonacci »
+
+    L'assistant utilisera `teamova_create_session`, demandera confirmation, puis créera la session.
+  </Accordion>
+  <Accordion title="Ajouter des stories">
+    « Ajoute ces stories à la session Sprint 13 : Login utilisateur, Réinitialisation mot de passe, Édition profil »
+
+    L'assistant appellera `teamova_add_stories` pour ajouter les stories par lot.
+  </Accordion>
+  <Accordion title="Comparer des sessions">
+    « Compare les estimations du Sprint 11 et du Sprint 12 »
+
+    L'assistant appellera `teamova_get_session_results` pour les deux sessions et présentera une comparaison.
+  </Accordion>
+</AccordionGroup>
+
+## Dépannage
+
+<AccordionGroup>
+  <Accordion title="L'authentification échoue">
+    Assurez-vous d'être connecté à Teamova avant d'autoriser l'assistant IA. Si l'écran de consentement n'apparaît pas, essayez de vider les cookies du navigateur et de vous reconnecter.
+  </Accordion>
+  <Accordion title="Aucune session retournée">
+    Le serveur MCP ne retourne que les sessions de l'organisation que vous avez autorisée. Si vous avez plusieurs organisations, vérifiez que vous avez sélectionné la bonne lors de l'étape de consentement.
+  </Accordion>
+  <Accordion title="Opérations d'écriture refusées">
+    Les outils d'écriture nécessitent le scope `planning-poker:write`. Si vous n'avez accordé que l'accès en lecture, reconnectez-vous et sélectionnez la permission d'écriture.
+  </Accordion>
+</AccordionGroup>

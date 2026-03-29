@@ -53,6 +53,7 @@
                   "en/planning-poker/sessions",
                   "en/planning-poker/voting-and-decks",
                   "en/planning-poker/integrations",
+                  "en/planning-poker/mcp",
                   "en/planning-poker/analytics"
                 ]
               },
@@ -107,6 +108,7 @@
                   "fr/planning-poker/sessions",
                   "fr/planning-poker/voting-and-decks",
                   "fr/planning-poker/integrations",
+                  "fr/planning-poker/mcp",
                   "fr/planning-poker/analytics"
                 ]
               },
