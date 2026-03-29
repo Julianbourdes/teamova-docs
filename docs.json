@@ -44,7 +44,8 @@
                 "pages": [
                   "en/core/authentication",
                   "en/core/organizations",
-                  "en/core/account"
+                  "en/core/account",
+                  "en/core/mcp"
                 ]
               },
               {
@@ -53,7 +54,6 @@
                   "en/planning-poker/sessions",
                   "en/planning-poker/voting-and-decks",
                   "en/planning-poker/integrations",
-                  "en/planning-poker/mcp",
                   "en/planning-poker/analytics"
                 ]
               },
@@ -99,7 +99,8 @@
                 "pages": [
                   "fr/core/authentication",
                   "fr/core/organizations",
-                  "fr/core/account"
+                  "fr/core/account",
+                  "fr/core/mcp"
                 ]
               },
               {
@@ -108,7 +109,6 @@
                   "fr/planning-poker/sessions",
                   "fr/planning-poker/voting-and-decks",
                   "fr/planning-poker/integrations",
-                  "fr/planning-poker/mcp",
                   "fr/planning-poker/analytics"
                 ]
               },
