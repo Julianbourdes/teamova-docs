@@ -44,7 +44,8 @@
                 "pages": [
                   "en/core/authentication",
                   "en/core/organizations",
-                  "en/core/account"
+                  "en/core/account",
+                  "en/core/mcp"
                 ]
               },
               {
@@ -98,7 +99,8 @@
                 "pages": [
                   "fr/core/authentication",
                   "fr/core/organizations",
-                  "fr/core/account"
+                  "fr/core/account",
+                  "fr/core/mcp"
                 ]
               },
               {
