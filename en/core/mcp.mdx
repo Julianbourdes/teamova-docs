@@ -12,11 +12,18 @@ Teamova exposes a **MCP Server** (Model Context Protocol) that lets you interact
     Works with Claude, ChatGPT, Copilot, Gemini, and any MCP-compatible client.
   </Card>
   <Card title="Secure by design" icon="shield">
-    OAuth 2.1 with PKCE — you control which organization and permissions to grant.
+    OAuth 2.1 with PKCE — you control which organization and permissions to
+    grant.
   </Card>
 </CardGroup>
 
 ## Getting started
+
+### Prerequisites
+
+- You have an active Teamova account.
+- You are a member of at least one organisation.
+- You are using an MCP-compatible AI assistant (Claude, ChatGPT, Copilot, Gemini, etc.).
 
 <Steps>
   <Step title="Find your MCP Server URL">
@@ -25,6 +32,7 @@ Teamova exposes a **MCP Server** (Model Context Protocol) that lets you interact
     ```url
     https://mcp.teamova.net/mcp
     ```
+
   </Step>
   <Step title="Add to your AI assistant">
     Paste the URL in your AI assistant's MCP settings:
@@ -33,6 +41,7 @@ Teamova exposes a **MCP Server** (Model Context Protocol) that lets you interact
     - **ChatGPT**: Settings > Apps > Add MCP Server
     - **Copilot**: Copilot Studio > Actions > MCP
     - **Gemini**: Settings > MCP Servers
+
   </Step>
   <Step title="Authorize access">
     Your AI assistant will redirect you to Teamova's consent screen. Select which organization to grant access to, review the permissions, and click **Allow**.
@@ -43,6 +52,7 @@ Teamova exposes a **MCP Server** (Model Context Protocol) that lets you interact
     - "Show me the results of my last Planning Poker session"
     - "What's the average estimate for Sprint 12?"
     - "Create a new Planning Poker session for Sprint 13"
+
   </Step>
 </Steps>
 
@@ -50,27 +60,28 @@ Teamova exposes a **MCP Server** (Model Context Protocol) that lets you interact
 
 The MCP Server exposes the following tools to AI assistants:
 
-| Tool | Type | Description |
-|------|------|-------------|
-| `teamova_list_sessions` | Read | List and filter your Planning Poker sessions with pagination |
-| `teamova_get_session` | Read | Get full session details including participants, stories, and votes |
-| `teamova_get_session_results` | Read | Aggregated estimation results: consensus, standard deviation, vote time |
-| `teamova_create_session` | Write | Create a new Planning Poker session with guided deck and team selection |
-| `teamova_add_stories` | Write | Add a batch of stories to an existing session |
+| Tool                          | Type  | Description                                                             |
+| ----------------------------- | ----- | ----------------------------------------------------------------------- |
+| `teamova_list_sessions`       | Read  | List and filter your Planning Poker sessions with pagination            |
+| `teamova_get_session`         | Read  | Get full session details including participants, stories, and votes     |
+| `teamova_get_session_results` | Read  | Aggregated estimation results: consensus, standard deviation, vote time |
+| `teamova_create_session`      | Write | Create a new Planning Poker session with guided deck and team selection |
+| `teamova_add_stories`         | Write | Add a batch of stories to an existing session                           |
 
 <Note>
-  Write tools require the `planning-poker:write` permission. Read tools only require `planning-poker:read`.
+  Write tools require the `planning-poker:write` permission. Read tools only
+  require `planning-poker:read`.
 </Note>
 
 ## Permissions
 
 When you connect Teamova, you grant specific permissions (scopes) to the AI assistant:
 
-| Scope | What it allows |
-|-------|----------------|
-| `planning-poker:read` | View sessions, results, votes, and statistics |
-| `planning-poker:write` | Create sessions and add stories |
-| `team:read` | View team information and members |
+| Scope                  | What it allows                                |
+| ---------------------- | --------------------------------------------- |
+| `planning-poker:read`  | View sessions, results, votes, and statistics |
+| `planning-poker:write` | Create sessions and add stories               |
+| `team:read`            | View team information and members             |
 
 You can revoke access at any time from **Account > Connections**.
 
@@ -91,21 +102,25 @@ Here are some example prompts you can use with your AI assistant once connected:
     "Show me the results of the Sprint 12 Planning Poker session"
 
     The assistant will call `teamova_get_session_results` and present consensus estimates, standard deviation, and vote times for each story.
+
   </Accordion>
   <Accordion title="Create a session">
     "Create a Planning Poker session called Sprint 13 with Fibonacci deck"
 
     The assistant will use `teamova_create_session`, ask for confirmation, and create the session.
+
   </Accordion>
   <Accordion title="Add stories">
     "Add these stories to the Sprint 13 session: User login, Password reset, Profile editing"
 
     The assistant will call `teamova_add_stories` to batch-add the stories.
+
   </Accordion>
   <Accordion title="Compare sessions">
     "Compare the estimates from Sprint 11 and Sprint 12"
 
     The assistant will call `teamova_get_session_results` for both sessions and present a comparison.
+
   </Accordion>
 </AccordionGroup>
 
@@ -113,12 +128,17 @@ Here are some example prompts you can use with your AI assistant once connected:
 
 <AccordionGroup>
   <Accordion title="Authentication fails">
-    Make sure you're logged into Teamova before authorizing the AI assistant. If the consent screen doesn't appear, try clearing your browser cookies and logging in again.
+    Make sure you're logged into Teamova before authorizing the AI assistant. If
+    the consent screen doesn't appear, try clearing your browser cookies and
+    logging in again.
   </Accordion>
   <Accordion title="No sessions returned">
-    The MCP Server only returns sessions from the organization you authorized. If you have multiple organizations, make sure you selected the right one during the consent step.
+    The MCP Server only returns sessions from the organization you authorized.
+    If you have multiple organizations, make sure you selected the right one
+    during the consent step.
   </Accordion>
   <Accordion title="Write operations denied">
-    Write tools require the `planning-poker:write` scope. If you only granted read access, reconnect and select the write permission.
+    Write tools require the `planning-poker:write` scope. If you only granted
+    read access, reconnect and select the write permission.
   </Accordion>
 </AccordionGroup>
