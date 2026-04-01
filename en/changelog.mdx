@@ -3,7 +3,7 @@ title: "Changelog"
 description: "Latest updates and improvements to Teamova"
 ---
 
-<Update label="0.7.0" tags={["Minor"]}>
+<Update label="0.7.0" tags={["Minor", "New features"]}>
 
 ## Multi-Organization MCP Support
 
@@ -14,8 +14,18 @@ Connect Claude to multiple Teamova organizations at once with improved authoriza
 - **Filter by organization** - Ask Claude to list sessions for a specific organization
 - **Connection confirmation** - Clear feedback after authorizing an AI assistant
 
-</Update>
+</Update> 
 
+<Update label="0.6.1" tags={["Patch"]}>
+
+## MCP Server Connection Fix
+
+Fixed an issue where connecting Claude to Teamova via MCP would get stuck in a login loop instead of showing the authorization screen.
+
+- **OAuth flow fixed** - You can now connect Claude to your Teamova account seamlessly
+- **Consent screen accessible** - The authorization page now loads correctly when connecting external tools
+
+</Update>
 
 <Update label="0.6.0" tags={["Minor", "New features"]}>
 

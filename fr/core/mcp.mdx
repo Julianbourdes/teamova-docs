@@ -12,7 +12,7 @@ Teamova expose un **serveur MCP** (Model Context Protocol) qui vous permet d'int
     Compatible avec Claude, ChatGPT, Copilot, Gemini et tout client MCP.
   </Card>
   <Card title="Sécurisé par conception" icon="shield">
-    OAuth 2.1 avec PKCE — vous contrôlez quelle organisation et quelles permissions accorder.
+    OAuth 2.1 avec PKCE — vous contrôlez quelles organisations et quelles permissions accorder.
   </Card>
 </CardGroup>
 
@@ -41,13 +41,18 @@ Teamova expose un **serveur MCP** (Model Context Protocol) qui vous permet d'int
     - **Gemini** : Paramètres > Serveurs MCP
   </Step>
   <Step title="Autorisez l'accès">
-    Votre assistant IA vous redirigera vers l'écran de consentement Teamova. Sélectionnez l'organisation à laquelle accorder l'accès, vérifiez les permissions et cliquez sur **Autoriser**.
+    Votre assistant IA vous redirigera vers l'écran de consentement Teamova. Sélectionnez les organisations auxquelles accorder l'accès, vérifiez les permissions et cliquez sur **Autoriser**.
+
+    Vous pouvez sélectionner **une ou plusieurs organisations** — l'assistant IA pourra accéder aux données de toutes les organisations sélectionnées.
+
+    Après autorisation, la page confirmera que la connexion a réussi. Vous pouvez ensuite retourner à votre assistant IA.
   </Step>
   <Step title="Commencez à utiliser">
     Demandez ce que vous voulez à votre assistant sur vos sessions Planning Poker :
 
+    - « Liste mes organisations »
     - « Montre-moi les résultats de ma dernière session Planning Poker »
-    - « Quelle est l'estimation moyenne pour le Sprint 12 ? »
+    - « Liste toutes les sessions actives dans l'organisation Marketing »
     - « Crée une nouvelle session Planning Poker pour le Sprint 13 »
   </Step>
 </Steps>
@@ -58,11 +63,19 @@ Le serveur MCP expose les outils suivants aux assistants IA :
 
 | Outil | Type | Description |
 |-------|------|-------------|
+| `teamova_list_organizations` | Lecture | Listez vos organisations autorisées avec noms et identifiants |
 | `teamova_list_sessions` | Lecture | Listez et filtrez vos sessions Planning Poker avec pagination |
 | `teamova_get_session` | Lecture | Détails complets d'une session : participants, stories et votes |
 | `teamova_get_session_results` | Lecture | Résultats agrégés : consensus, écart-type, temps de vote |
 | `teamova_create_session` | Écriture | Créez une nouvelle session avec sélection guidée du deck et de l'équipe |
 | `teamova_add_stories` | Écriture | Ajoutez un lot de stories à une session existante |
+
+### Filtrage par organisation
+
+Si vous avez autorisé plusieurs organisations, vous pouvez filtrer les sessions par organisation :
+
+- « Liste les sessions de mon organisation Marketing » — l'assistant utilisera `teamova_list_organizations` pour trouver l'identifiant, puis appellera `teamova_list_sessions` avec le filtre `organization_id`.
+- Si aucun filtre n'est spécifié, l'assistant retournera les sessions de **toutes** les organisations autorisées.
 
 <Note>
   Les outils d'écriture nécessitent la permission `planning-poker:write`. Les outils de lecture nécessitent uniquement `planning-poker:read`.
@@ -77,13 +90,27 @@ Lorsque vous connectez Teamova, vous accordez des permissions spécifiques (scop
 | `planning-poker:read` | Voir les sessions, résultats, votes et statistiques |
 | `planning-poker:write` | Créer des sessions et ajouter des stories |
 | `team:read` | Voir les informations d'équipe et les membres |
+| `organization:read` | Lister vos organisations autorisées |
 
 Vous pouvez révoquer l'accès à tout moment depuis **Compte > Comptes Connectés**.
+
+## Support multi-organisation
+
+Teamova supporte l'autorisation d'assistants IA sur plusieurs organisations :
+
+- **Lors du consentement**, sélectionnez une ou plusieurs organisations avec les cases à cocher.
+- **Après autorisation**, l'assistant IA peut accéder aux données de toutes les organisations sélectionnées.
+- **Utilisez « Tout sélectionner »** pour autoriser rapidement toutes vos organisations.
+- **Filtrez à tout moment** en demandant à l'assistant de se concentrer sur une organisation spécifique.
+
+<Tip>
+  Si vous ajoutez une nouvelle organisation par la suite, vous devrez reconnecter votre assistant IA pour l'inclure.
+</Tip>
 
 ## Sécurité
 
 - **OAuth 2.1 + PKCE** — Authentification standard avec clé de preuve pour l'échange de code
-- **Accès par organisation** — Chaque autorisation donne accès à une seule organisation
+- **Accès multi-organisation** — Choisissez exactement quelles organisations partager lors du consentement
 - **Permissions granulaires** — Les assistants IA n'accèdent qu'à ce que vous autorisez explicitement
 - **Expiration des tokens** — Les tokens d'accès expirent après 1 heure ; les tokens de rafraîchissement après 30 jours
 - **Révocation** — Révoquez l'accès instantanément depuis les paramètres de votre compte
@@ -93,10 +120,20 @@ Vous pouvez révoquer l'accès à tout moment depuis **Compte > Comptes Connect�
 Voici quelques exemples de prompts à utiliser avec votre assistant IA une fois connecté :
 
 <AccordionGroup>
+  <Accordion title="Lister vos organisations">
+    « Quelles sont mes organisations autorisées ? »
+
+    L'assistant appellera `teamova_list_organizations` et vous montrera tous les espaces de travail connectés.
+  </Accordion>
   <Accordion title="Voir les résultats d'une session">
     « Montre-moi les résultats de la session Planning Poker du Sprint 12 »
 
     L'assistant appellera `teamova_get_session_results` et présentera les estimations consensus, l'écart-type et les temps de vote pour chaque story.
+  </Accordion>
+  <Accordion title="Filtrer les sessions par organisation">
+    « Liste toutes les sessions actives de mon organisation Marketing »
+
+    L'assistant trouvera l'identifiant de l'organisation, puis appellera `teamova_list_sessions` avec le filtre organisation.
   </Accordion>
   <Accordion title="Créer une session">
     « Crée une session Planning Poker Sprint 13 avec le deck Fibonacci »
@@ -122,7 +159,10 @@ Voici quelques exemples de prompts à utiliser avec votre assistant IA une fois 
     Assurez-vous d'être connecté à Teamova avant d'autoriser l'assistant IA. Si l'écran de consentement n'apparaît pas, essayez de vider les cookies du navigateur et de vous reconnecter.
   </Accordion>
   <Accordion title="Aucune session retournée">
-    Le serveur MCP ne retourne que les sessions de l'organisation que vous avez autorisée. Si vous avez plusieurs organisations, vérifiez que vous avez sélectionné la bonne lors de l'étape de consentement.
+    Le serveur MCP ne retourne que les sessions des organisations que vous avez autorisées. Si vous avez plusieurs organisations, vérifiez que vous avez sélectionné les bonnes lors de l'étape de consentement, ou demandez à l'assistant de « lister mes organisations » pour vérifier lesquelles sont connectées.
+  </Accordion>
+  <Accordion title="Les noms d'organisation s'affichent comme des identifiants">
+    Si les noms d'organisation apparaissent comme des UUID au lieu de noms, reconnectez votre assistant IA. Les connexions plus anciennes peuvent ne pas contenir les noms d'organisation dans le token.
   </Accordion>
   <Accordion title="Opérations d'écriture refusées">
     Les outils d'écriture nécessitent le scope `planning-poker:write`. Si vous n'avez accordé que l'accès en lecture, reconnectez-vous et sélectionnez la permission d'écriture.
