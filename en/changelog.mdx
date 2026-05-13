@@ -3,6 +3,19 @@ title: "Changelog"
 description: "Latest updates and improvements to Teamova"
 ---
 
+<Update label="0.9.1" tags={["Patch"]}>
+
+## More reliable timestamps everywhere
+
+- **Onboarding nudge fires on time again.** A subtle clock drift was preventing the "Personne n'est encore là." hint from showing in fresh sessions when teammates hadn't joined yet — it now appears reliably for the first two minutes after creating a session.
+- **Account deletion countdown is accurate.** The 90-day cooldown shown after you request account deletion now matches the wall-clock instant the request was filed, regardless of which region serves your traffic.
+- **Invite and access links expire when they say they expire.** Guest links, magic-link codes, and password-reset emails compute their countdown from the same reference clock the server uses to validate them, so the "expires in X" hint stays trustworthy.
+
+These improvements are silent — nothing in your day-to-day workflow changes — but they remove an entire class of "why didn't it show up?" surprises across the product.
+
+</Update>
+
+
 <Update label="0.9.0" tags={["Minor"]}>
 
 ## Guest Access

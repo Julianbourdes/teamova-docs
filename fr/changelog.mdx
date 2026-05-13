@@ -3,6 +3,19 @@ title: "Changelog"
 description: "Dernières mises à jour et améliorations de Teamova"
 ---
 
+<Update label="0.9.1" tags={["Patch"]}>
+
+## Des horodatages plus fiables partout
+
+- **L'astuce d'onboarding s'affiche à nouveau au bon moment.** Un décalage discret empêchait le message "Personne n'est encore là." d'apparaître dans les sessions fraîchement créées tant que personne n'avait rejoint — il s'affiche maintenant correctement pendant les deux premières minutes.
+- **Le compte à rebours de suppression de compte est exact.** Les 90 jours affichés après une demande de suppression correspondent désormais à l'instant réel de la demande, quelle que soit la région qui sert votre trafic.
+- **Les liens d'invitation et d'accès expirent à l'heure annoncée.** Les liens invités, les codes magic-link et les emails de réinitialisation calculent leur expiration sur la même horloge que celle qui les valide côté serveur, ce qui rend l'indication "expire dans X" fiable.
+
+Ces améliorations sont silencieuses — rien ne change dans votre usage quotidien — mais elles éliminent toute une famille de "pourquoi ça ne s'affiche pas ?" dans le produit.
+
+</Update>
+
+
 <Update label="0.9.0" tags={["Minor"]}>
 
 ## Accès Invité
