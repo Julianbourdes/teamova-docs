@@ -49,6 +49,14 @@
                 ]
               },
               {
+                "group": "One-on-One",
+                "pages": [
+                  "en/one-on-one/meetings",
+                  "en/one-on-one/templates",
+                  "en/one-on-one/actions"
+                ]
+              },
+              {
                 "group": "Planning Poker",
                 "pages": [
                   "en/planning-poker/sessions",
@@ -101,6 +109,14 @@
                   "fr/core/organizations",
                   "fr/core/account",
                   "fr/core/mcp"
+                ]
+              },
+              {
+                "group": "One-on-One",
+                "pages": [
+                  "fr/one-on-one/meetings",
+                  "fr/one-on-one/templates",
+                  "fr/one-on-one/actions"
                 ]
               },
               {
